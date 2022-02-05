@@ -7,6 +7,7 @@ class Admin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        color: Colors.indigo[300],
         child: Text('second'),
       ),
     );

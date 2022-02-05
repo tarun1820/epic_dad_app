@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225746709087",
+    "project_id": "doctor-at-disposal",
+    "storage_bucket": "doctor-at-disposal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225746709087:android:0be89ecb850b77a69589ea",
+        "android_client_info": {
+          "package_name": "com.epic.DoctorAtDisposal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225746709087-j8s7edfso11m0qm80kv2l57ap0bbcnt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNKby2TE6elY3ssODfXLuN2c5wuKOmUyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225746709087-j8s7edfso11m0qm80kv2l57ap0bbcnt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
