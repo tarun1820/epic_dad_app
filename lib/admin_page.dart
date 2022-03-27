@@ -10,7 +10,7 @@ class Admin extends StatelessWidget {
   Widget build(BuildContext context) {
     final _firestore = FirebaseFirestore.instance;
 
-    String messageText = "50";
+    String messageText = "";
     return Scaffold(
       appBar: AppBar(
         title: Text("admin consol"),
@@ -21,6 +21,8 @@ class Admin extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(50),
             child: TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               controller: messageTextController,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
