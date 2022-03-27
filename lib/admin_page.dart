@@ -42,11 +42,14 @@ class Admin extends StatelessWidget {
           FloatingActionButton(
               backgroundColor: Colors.pinkAccent,
               onPressed: () {
-                messageTextController.clear();
-                final mess = Messages(
-                    text: messageText, createdAt: Timestamp.now());
+                if(messageText !="") {
+                  messageTextController.clear();
+                  final mess = Messages(
+                      text: messageText, createdAt: Timestamp.now());
 
-                createUser(mess);
+
+                  createUser(mess);
+                }
               },
               child: Text("post")),
         ],
