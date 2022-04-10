@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/admin_page.dart';
 import 'package:untitled1/student.dart';
-
 import 'admin_login.dart';
 
 void main() async {

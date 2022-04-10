@@ -11,48 +11,60 @@ class Admin extends StatelessWidget {
     final _firestore = FirebaseFirestore.instance;
 
     String messageText = "";
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("admin consol"),
-        backgroundColor: Colors.deepPurple[900],
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage( "images/login3.jpg"),
+              fit: BoxFit.fill
+          )
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(50),
-            child: TextField(
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              controller: messageTextController,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
+      child: Scaffold(
+      backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text("admin consol"),
+          backgroundColor: Colors.deepPurple[900],
+        ),
+        body: Column(
+          children: [
+            Padding(
+
+              padding: EdgeInsets.all(50),
+              child: TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
+                controller: messageTextController,
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.deepPurpleAccent, width: 2)),
+                  enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.deepPurpleAccent, width: 2)),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+                        BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
+                  ),
+                  hintText: "Enter Time only",
+                    filled: true
                 ),
-                hintText: "Enter Time only",
+                onChanged: (text) {
+                  messageText = text;
+                },
               ),
-              onChanged: (text) {
-                messageText = text;
-              },
             ),
-          ),
-          FloatingActionButton(
-              backgroundColor: Colors.pinkAccent,
-              onPressed: () {
-                if(messageText !="") {
-                  messageTextController.clear();
-                  final mess = Messages(
-                      text: messageText, createdAt: Timestamp.now());
+            FloatingActionButton(
+                backgroundColor: Colors.pinkAccent,
+                onPressed: () {
+                  if(messageText !="") {
+                    messageTextController.clear();
+                    final mess = Messages(
+                        text: messageText, createdAt: Timestamp.now());
 
 
-                  createUser(mess);
-                }
-              },
-              child: Text("post")),
-        ],
+                    createUser(mess);
+                  }
+                },
+                child: Text("post")),
+          ],
+        ),
       ),
     );
   }

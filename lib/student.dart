@@ -1,3 +1,5 @@
+
+import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -34,48 +36,6 @@ class FirstScreen extends StatelessWidget {
                 ),
                 dragHandler(),
 
-                // Row(children: [
-                //   SizedBox(
-                //     width: 50,
-                //   ),
-                //   const Text(
-                //     "Hospital",
-                //     style: TextStyle(
-                //       decorationThickness: 2.85,
-                //       decorationStyle: TextDecorationStyle.solid,
-                //     ),
-                //   ),
-                //   new Spacer(),
-                //   /*ElevatedButton(
-                //       child: Text('call'),
-                //       style: ElevatedButton.styleFrom(primary: Colors.green),
-                //       onPressed: () async {
-                //         const number = '9959648235';
-                //         await FlutterPhoneDirectCaller.callNumber(number);
-                //       }
-                //       //launch('tel://7893977464')}, label:const Text('') ,
-                //       )*/
-                //   ElevatedButton.icon(
-                //     onPressed: () async {
-                //       const number = '9959648235';
-                //       await FlutterPhoneDirectCaller.callNumber(number);
-                //     },
-                //     icon: Icon(
-                //       Icons.phone,
-                //     ),
-                //     label: Text("Call"),
-                //     //icon data for elevated button
-                //     style: ElevatedButton.styleFrom(
-                //         primary: Colors.green //elevated button background color
-                //         ),
-                //   ),
-                //   SizedBox(
-                //     width: 50,
-                //   )
-                // ]
-                //
-                //     //launch('tel://7893977464')}, label:const Text('') ,
-                //     ), //hospital mobile number
                 Card(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -114,7 +74,7 @@ class FirstScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 Card(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -164,6 +124,7 @@ class FirstScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   new Spacer(),
+
                   OutlinedButton.icon(
                     // style: ButtonStyle(
                     //     backgroundColor:
@@ -171,7 +132,7 @@ class FirstScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Admin()),
+                        MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -290,18 +251,48 @@ class FirstScreen extends StatelessWidget {
       Messages(text: json['text'], createdAt: json['createdAt']);
 
   Widget dragHandler() => Center(
-        child: Align(
-          alignment: Alignment.center,
-          child: Container(
-            width: 150,
-            height: 7.5,
-            decoration: BoxDecoration(
-                color: Colors.grey[500],
-                border: Border.all(width: 1, color: Colors.grey),
-                borderRadius: const BorderRadius.all(Radius.circular(25))),
-          ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [new Spacer(),
+        Container(
+          width: 40,
+          height: 7.5,
+          decoration: BoxDecoration(
+              color: Colors.red[500],
+              //border: Border.all(width: 1, color: Colors.blue),
+              borderRadius: const BorderRadius.all(Radius.circular(25))),
         ),
-      );
+        SizedBox(
+          width: 15,
+        ),
+        Text(
+          "^ swipe up ^",
+          style: TextStyle(fontSize: 17),
+        ),
+        SizedBox(
+          width: 15,
+        ),
+        Container(
+          width: 40,
+          height: 7.5,
+          decoration: BoxDecoration(
+              color: Colors.red[500],
+              //border: Border.all(width: 1, color: Colors.grey),
+              borderRadius: const BorderRadius.all(Radius.circular(25))),
+        ),
+        new Spacer(),
+        // SizedBox(
+        //   width: 139,
+        // ),
+      ],
+    ),
+  );
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
 }
 
 class Messages {
