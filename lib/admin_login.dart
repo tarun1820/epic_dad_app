@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
       child:Scaffold(
         backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text("doctor login"),
+        title: Text("Doctor Login"),
       ),
       body:  Column(
           children: [
@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
             ),
             //password
             FloatingActionButton(
-                child:Text("log in"),onPressed:() async{
+                child:Text("Log In"),onPressed:() async{
               try{
                 print(email);
                 print(password);

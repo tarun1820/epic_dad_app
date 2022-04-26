@@ -21,7 +21,7 @@ class Admin extends StatelessWidget {
       child: Scaffold(
       backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text("admin consol"),
+          title: Text("Admin Console"),
           backgroundColor: Colors.deepPurple[900],
         ),
         body: Column(
@@ -42,7 +42,7 @@ class Admin extends StatelessWidget {
                     borderSide:
                         BorderSide(color: Colors.deepPurpleAccent, width: 2.0),
                   ),
-                  hintText: "Enter Time only",
+                  hintText: "Enter Message",
                     filled: true
                 ),
                 onChanged: (text) {
@@ -62,7 +62,7 @@ class Admin extends StatelessWidget {
                     createUser(mess);
                   }
                 },
-                child: Text("post")),
+                child: Text("Post")),
           ],
         ),
       ),
