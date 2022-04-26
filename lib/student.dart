@@ -18,7 +18,7 @@ class FirstScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Doctor at disposal'),
+          title: Text('Doctor at Disposal'),
           backgroundColor: Colors.deepPurple[900],
         ),
         body: SlidingUpPanel(
@@ -148,7 +148,7 @@ class FirstScreen extends StatelessWidget {
                             EdgeInsets.all(10) //content padding inside button
                         ),
                     label: const Text(
-                      'add timings',
+                      'Add Timings',
                       style: TextStyle(color: Colors.yellow),
                     ),
                     icon: Icon(Icons.av_timer_outlined,
@@ -192,7 +192,7 @@ class FirstScreen extends StatelessWidget {
                         ),
                       );
                     } else if (snapshot.hasError) {
-                      return Text('some thing went wrong ! ${snapshot.error}');
+                      return Text('something went wrong! ${snapshot.error}');
                     } else {
                       return Center(child: CircularProgressIndicator());
                     }
@@ -229,7 +229,11 @@ class FirstScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 20),
                       )]),),new Spacer(),
                 Row(children:[new Spacer(),Text(new DateFormat.jm().format(DateTime.parse(message.createdAt.
-                toDate().toString()))),SizedBox(width: 10,)] )],
+                toDate().toString()))),SizedBox(width: 10,)
+                ,Text((message.createdAt.toDate().day.toString()+"-"+
+                      message.createdAt.toDate().month.toString()+"-"+
+                      message.createdAt.toDate().year.toString()
+                  )),SizedBox(width: 10) ,] )],
 
                ),
           ),

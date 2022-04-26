@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
+  bool _isObscure = true;
   late String email;
   late String password;
   final _auth=FirebaseAuth.instance;
@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
       child:Scaffold(
         backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text("doctor login"),
+        title: Text("Doctor Login"),
       ),
       body:  Column(
           children: [
@@ -60,7 +60,21 @@ class _LoginState extends State<Login> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 50,vertical: 10),
               child: TextField(
+                  obscureText: _isObscure,
                   decoration: InputDecoration(
+
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _isObscure ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
+                      ),
+
+
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
                           borderSide:
@@ -72,6 +86,7 @@ class _LoginState extends State<Login> {
                       hintText: "Enter Password",
                       filled: true
                   ),
+
                 maxLength: 50,
                 onChanged: (text){
                   password=text;
@@ -80,7 +95,7 @@ class _LoginState extends State<Login> {
             ),
             //password
             FloatingActionButton(
-                child:Text("log in"),onPressed:() async{
+                child:Text("Log In"),onPressed:() async{
               try{
                 print(email);
                 print(password);
