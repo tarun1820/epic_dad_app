@@ -1,16 +1,7 @@
-# untitled1
+It is an android application.
+Developed using Flutter and Firebase.
+The main aim of the project is to create a platform between doctor and  patients.
+In the app the doctor will post the timings when  he/she will be available at the hospital. 
+There is a sliding up panel in which emergency numbers are available.
+Also login to the doctor for  posting  the message.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
